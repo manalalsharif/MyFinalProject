@@ -1,4 +1,4 @@
-package com.example.myfinalproject;
+package com.example.myfinalprojectcs3270;
 
 import android.app.Activity;
 import android.content.Intent;
