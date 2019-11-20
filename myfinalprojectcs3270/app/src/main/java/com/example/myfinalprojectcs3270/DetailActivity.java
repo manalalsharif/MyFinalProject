@@ -11,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private ImageView moviePoster;
     private TextView movieName, movieOverview, movieRating, movieRelease, movieFavorite;
+    private Button addToCart;
 
     private RequestQueue requestQueue;
     private JsonObjectRequest trailerRequest, reviewRequest;
@@ -87,6 +89,7 @@ public class DetailActivity extends AppCompatActivity {
         movieRating = findViewById(R.id.movie_rating_detail);
         movieRelease = findViewById(R.id.movie_release_detail);
         movieFavorite = findViewById(R.id.movie_favorite_detail);
+        addToCart = findViewById(R.id.addToCart);
 
         Picasso.get()
                 .load(image)
