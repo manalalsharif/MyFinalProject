@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.myfinalproject"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -59,6 +59,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Butterknife
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
