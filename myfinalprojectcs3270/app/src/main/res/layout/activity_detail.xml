@@ -36,7 +36,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="383dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
@@ -74,10 +74,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:paddingBottom="16dp"
-                            android:paddingEnd="8dp"
                             android:paddingStart="8dp"
                             android:paddingTop="16dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="16dp"
                             android:textColor="@color/materialBlack"
                             android:textSize="16sp" />
 
@@ -95,10 +95,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:paddingBottom="16dp"
-                            android:paddingEnd="8dp"
                             android:paddingStart="8dp"
                             android:paddingTop="16dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="16dp"
                             android:textColor="@color/materialBlack"
                             android:textSize="16sp" />
 

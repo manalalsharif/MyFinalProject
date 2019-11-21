@@ -36,8 +36,6 @@ public class DetailActivity extends AppCompatActivity {
     private TextView movieName, movieOverview, movieRating, movieRelease, movieFavorite;
     private Button addToCart;
 
-    private RequestQueue requestQueue;
-    private JsonObjectRequest trailerRequest, reviewRequest;
 
     private MovieDatabase movieDatabase;
     private MovieItem favoriteMovie;
