@@ -1,6 +1,7 @@
 package com.example.myfinalprojectcs3270.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,8 +74,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 .load(movieItem.getImage())
                 .into(holder.moviePoster);
 
+        Log.d("test", "image url:" +movieItem.getImage());
         holder.movieName.setText(movieItem.getName());
-
         holder.movieOverview.setText(movieItem.getOverview());
     }
 

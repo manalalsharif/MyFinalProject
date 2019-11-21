@@ -68,7 +68,7 @@
             android:gravity="center"
             android:padding="16dp"
             android:text="@string/connection_timed_out"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="18sp" />
 
     </RelativeLayout>

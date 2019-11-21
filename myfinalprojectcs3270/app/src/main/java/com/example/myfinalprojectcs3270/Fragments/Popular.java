@@ -165,6 +165,8 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
                 String name = movieObject.getString("original_title");
                 String overview = movieObject.getString("overview");
                 String release_date = movieObject.getString("release_date");
+                //test
+                //String image = "https://m.media-amazon.com/images/M/MV5BYmU4NTk4OWYtMjE4My00MGVkLTgwY2EtZTZjN2YyOGFiMDQ0L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg";
                 String image = BASE_URL + poster_path;
 
                 movieItemList.add(new MovieItem(id, name, image, overview, vote_average, release_date));

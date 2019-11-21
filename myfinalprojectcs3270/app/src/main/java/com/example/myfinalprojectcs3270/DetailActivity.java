@@ -72,7 +72,6 @@ public class DetailActivity extends AppCompatActivity {
         //Initializing the views from the XML.
         initViews();
 
-
         isMovieFavorite();
         movieFavorite.setOnClickListener(new View.OnClickListener() {
             @Override

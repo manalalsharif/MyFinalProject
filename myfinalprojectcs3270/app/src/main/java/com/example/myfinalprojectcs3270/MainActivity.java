@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         //Defining colors for the bottom navigation menu.
-        int[] nowColors = new int[]{
+        int[] homeColors = new int[]{
                 ContextCompat.getColor(this, R.color.primary_now_playing),
                 ContextCompat.getColor(this, R.color.materialBlack),
                 ContextCompat.getColor(this, R.color.materialBlack),
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 ContextCompat.getColor(this, R.color.primary_now_playing)
         };
 
-        int[] popularColors = new int[]{
+        int[] movieColors = new int[]{
                 ContextCompat.getColor(this, R.color.primary_popular),
                 ContextCompat.getColor(this, R.color.materialBlack),
                 ContextCompat.getColor(this, R.color.materialBlack),
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 ContextCompat.getColor(this, R.color.primary_popular)
         };
 
-        int[] topColors = new int[]{
+        int[] cartColors = new int[]{
                 ContextCompat.getColor(this, R.color.primary_top),
                 ContextCompat.getColor(this, R.color.materialBlack),
                 ContextCompat.getColor(this, R.color.materialBlack),
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 ContextCompat.getColor(this, R.color.primary_top)
         };
 
-        int[] favoriteColors = new int[]{
+        int[] accountColors = new int[]{
                 ContextCompat.getColor(this, R.color.primary_favorites),
                 ContextCompat.getColor(this, R.color.materialBlack),
                 ContextCompat.getColor(this, R.color.materialBlack),
@@ -77,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
                 ContextCompat.getColor(this, R.color.primary_favorites)
         };
 
-        final ColorStateList nowColorList = new ColorStateList(states, nowColors);
-        final ColorStateList popularColorList = new ColorStateList(states, popularColors);
-        final ColorStateList topColorList = new ColorStateList(states, topColors);
-        final ColorStateList favoriteColorList = new ColorStateList(states, favoriteColors);
+        final ColorStateList homeColorList = new ColorStateList(states, homeColors);
+        final ColorStateList movieColorList = new ColorStateList(states, movieColors);
+        final ColorStateList cartColorList = new ColorStateList(states, cartColors);
+        final ColorStateList accountColorList = new ColorStateList(states, accountColors);
 
         //Initialising the major containers
         bottomNavigationView = findViewById(R.id.bottom_navigation_main);
-        bottomNavigationView.setItemIconTintList(nowColorList);
+        bottomNavigationView.setItemIconTintList(homeColorList);
 
         viewPager = findViewById(R.id.view_pager_main);
         sectionPagerAdapter = new SectionPagerAdapter(getSupportFragmentManager());
@@ -95,25 +95,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.now_playing_menu_item:
+                    case R.id.home_menu_item:
                         viewPager.setCurrentItem(0);
-                        bottomNavigationView.setItemIconTintList(nowColorList);
-                        bottomNavigationView.setItemTextColor(nowColorList);
+                        bottomNavigationView.setItemIconTintList(homeColorList);
+                        bottomNavigationView.setItemTextColor(homeColorList);
                         break;
-                    case R.id.popular_menu_item:
+                    case R.id.movies_menu_item:
                         viewPager.setCurrentItem(1);
-                        bottomNavigationView.setItemIconTintList(popularColorList);
-                        bottomNavigationView.setItemTextColor(popularColorList);
+                        bottomNavigationView.setItemIconTintList(movieColorList);
+                        bottomNavigationView.setItemTextColor(movieColorList);
                         break;
-                    case R.id.top_menu_item:
+                    case R.id.cart_menu_item:
                         viewPager.setCurrentItem(2);
-                        bottomNavigationView.setItemIconTintList(topColorList);
-                        bottomNavigationView.setItemTextColor(topColorList);
+                        bottomNavigationView.setItemIconTintList(cartColorList);
+                        bottomNavigationView.setItemTextColor(cartColorList);
                         break;
-                    case R.id.favorites_menu_item:
+                    case R.id.account_menu_item:
                         viewPager.setCurrentItem(3);
-                        bottomNavigationView.setItemIconTintList(favoriteColorList);
-                        bottomNavigationView.setItemTextColor(favoriteColorList);
+                        bottomNavigationView.setItemIconTintList(accountColorList);
+                        bottomNavigationView.setItemTextColor(accountColorList);
                         break;
                 }
                 return false;
@@ -130,24 +130,24 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        bottomNavigationView.setItemIconTintList(nowColorList);
-                        bottomNavigationView.setItemTextColor(nowColorList);
+                        bottomNavigationView.setItemIconTintList(homeColorList);
+                        bottomNavigationView.setItemTextColor(homeColorList);
                         break;
                     case 1:
-                        bottomNavigationView.setItemIconTintList(popularColorList);
-                        bottomNavigationView.setItemTextColor(popularColorList);
+                        bottomNavigationView.setItemIconTintList(movieColorList);
+                        bottomNavigationView.setItemTextColor(movieColorList);
                         break;
                     case 2:
-                        bottomNavigationView.setItemIconTintList(topColorList);
-                        bottomNavigationView.setItemTextColor(topColorList);
+                        bottomNavigationView.setItemIconTintList(cartColorList);
+                        bottomNavigationView.setItemTextColor(cartColorList);
                         break;
                     case 3:
-                        bottomNavigationView.setItemIconTintList(favoriteColorList);
-                        bottomNavigationView.setItemTextColor(favoriteColorList);
+                        bottomNavigationView.setItemIconTintList(accountColorList);
+                        bottomNavigationView.setItemTextColor(accountColorList);
                         break;
                     default:
-                        bottomNavigationView.setItemIconTintList(nowColorList);
-                        bottomNavigationView.setItemTextColor(nowColorList);
+                        bottomNavigationView.setItemIconTintList(homeColorList);
+                        bottomNavigationView.setItemTextColor(homeColorList);
                         break;
                 }
 
