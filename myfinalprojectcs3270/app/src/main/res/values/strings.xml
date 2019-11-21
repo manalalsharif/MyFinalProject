@@ -7,18 +7,11 @@
     <string name="popularUrl">https://api.themoviedb.org/3/movie/popular?api_key=c088bdf1dd049eb86df61b6dcbb8b24b&amp;language=en-US&amp;page=1</string>
     <string name="topUrl">https://api.themoviedb.org/3/movie/top_rated?api_key=c088bdf1dd049eb86df61b6dcbb8b24b&amp;language=en-US&amp;page=1&amp;region=US</string>
     <string name="nowUrl">https://api.themoviedb.org/3/movie/now_playing?api_key=c088bdf1dd049eb86df61b6dcbb8b24b&amp;language=en-US</string>
-    <string name="baseUrl">http://image.tmdb.org/t/p/w342</string>
-    <string name="reviewUrl">https://api.themoviedb.org/3/movie/{movieID}/reviews?api_key=c088bdf1dd049eb86df61b6dcbb8b24b&amp;language=en-US</string>
-    <string name="trailerUrl">https://api.themoviedb.org/3/movie/{movieID}/videos?api_key=c088bdf1dd049eb86df61b6dcbb8b24b&amp;language=en-US</string>
     <string name="connection_timed_out">Connection Timed Out!</string>
     <string name="check_network_connection">Please check your internet connection!</string>
     <string name="fragment_menu_title">●</string>
     <string name="error_image">Error Image</string>
-    <string name="favourite">Favourite</string>
-    <string name="trailers">Trailers</string>
-    <string name="reviews">Reviews</string>
     <string name="reload">RELOAD</string>
-    <string name="trailerBase">vnd.youtube:</string>
 </resources>
 
 
