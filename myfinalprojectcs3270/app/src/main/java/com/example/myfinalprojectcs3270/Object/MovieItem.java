@@ -2,9 +2,10 @@ package com.example.myfinalprojectcs3270.Object;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "movies")
+@Entity(tableName = "movies", indices = {@Index("id")})
 public class MovieItem {
 
     @PrimaryKey
@@ -15,11 +16,13 @@ public class MovieItem {
     private String overview;
     private String vote_average;
     private String release_date;
+    private double price;
 
     private MovieItem() {
     }
 
     public MovieItem(@NonNull String id, String name, String image, String overview, String vote_average, String release_date) {
+        this.price = 9.99;
         this.id = id;
         this.name = name;
         this.image = image;
@@ -51,5 +54,13 @@ public class MovieItem {
 
     public String getRelease_date() {
         return release_date;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

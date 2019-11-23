@@ -6,12 +6,13 @@ import androidx.room.RoomDatabase;
 import android.content.Context;
 
 import com.example.myfinalprojectcs3270.Object.MovieItem;
+import com.example.myfinalprojectcs3270.Object.MyCartItem;
 
-@Database(entities = {MovieItem.class}, version = 1, exportSchema = false)
+@Database(entities = {MovieItem.class, MyCartItem.class}, version = 1, exportSchema = false)
 public abstract class MovieDatabase extends RoomDatabase {
 
     private static final Object LOCK = new Object();
-    private static final String DATABASE_NAME = "movies";
+    private static final String DATABASE_NAME = "finalproject";
     private static MovieDatabase sInstance;
 
     public static MovieDatabase getInstance(Context context) {
@@ -28,4 +29,5 @@ public abstract class MovieDatabase extends RoomDatabase {
     }
 
     public abstract MovieDao movieDao();
+    public abstract MyCartDao myCartDao();
 }

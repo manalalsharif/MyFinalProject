@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -70,6 +71,7 @@ public class DetailActivity extends AppCompatActivity {
         //Initializing the views from the XML.
         initViews();
 
+        //Checking if favorite movie
         isMovieFavorite();
         movieFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,7 @@ public class DetailActivity extends AppCompatActivity {
                 onFavoriteClicked();
             }
         });
+
     }
 
     private void initViews() {
@@ -99,6 +102,16 @@ public class DetailActivity extends AppCompatActivity {
 
         movieDatabase = MovieDatabase.getInstance(getApplicationContext());
         detailParent = findViewById(R.id.detail_parent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -171,5 +184,9 @@ public class DetailActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void addToCartClicked(){
+
     }
 }

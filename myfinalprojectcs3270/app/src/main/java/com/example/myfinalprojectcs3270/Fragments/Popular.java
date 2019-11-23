@@ -48,8 +48,7 @@ import com.example.myfinalprojectcs3270.DetailActivity;
  */
 public class Popular extends Fragment implements MovieAdapter.RecyclerClickListener {
 
-    private static String POPULAR_URL;
-    private String BASE_URL;
+    private static String NOW_PLAYING;
 
     private RecyclerView moviesRecycler;
     private List<MovieItem> movieItemList;
@@ -76,7 +75,7 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
         View view = inflater.inflate(R.layout.fragment_movies_layout, container, false);
 
         //Initialising the URL parameter from the strings.xml file.
-        POPULAR_URL = getResources().getString(R.string.popularUrl);
+        NOW_PLAYING = "https://api.themoviedb.org/3/movie/now_playing?api_key=c088bdf1dd049eb86df61b6dcbb8b24b&amp;language=en-US&page=1&amp;region=US";
 
         //Setting up the recycler view for the fragment.
         movieItemList = new ArrayList<>();
@@ -107,7 +106,7 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
                 }
             }, 500);
         } else {
-            Toast.makeText(getContext(), getResources().getString(R.string.check_network_connection), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please check your internet connection!", Toast.LENGTH_SHORT).show();
         }
 
         return view;
@@ -180,7 +179,7 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
         requestQueue = Volley.newRequestQueue(getContext().getApplicationContext());
         if (isConnected()) {
             movieItemList.clear();
-            jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, POPULAR_URL, null,
+            jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NOW_PLAYING, null,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
@@ -189,7 +188,7 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getContext().getApplicationContext(), getResources().getString(R.string.check_network_connection), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext().getApplicationContext(), "Please check your internet connection!", Toast.LENGTH_SHORT).show();
                 }
             });
         }

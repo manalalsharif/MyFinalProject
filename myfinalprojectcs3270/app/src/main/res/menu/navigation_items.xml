@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/home_menu_item"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home" />
 
-    <item
-        android:id="@+id/movies_menu_item"
-        android:icon="@drawable/ic_store_black_24dp"
-        android:title="Movies" />
+    <item android:title="Home"
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home_black_24dp"/>
 
-    <item
-        android:id="@+id/cart_menu_item"
-        android:icon="@drawable/ic_shopping_cart_black_24dp"
-        android:title="MyCart" />
+    <item android:title="Products"
+        android:id="@+id/menu_products"
+        android:icon="@drawable/ic_store_black_24dp"/>
 
-    <item
-        android:id="@+id/account_menu_item"
-        android:icon="@drawable/ic_person_black_24dp"
-        android:title="Account" />
+    <item android:title="Cart"
+        android:id="@+id/menu_cart"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"/>
+
+    <item android:title="My Account"
+        android:id="@+id/menu_account"
+        android:icon="@drawable/ic_person_black_24dp"/>
 </menu>
