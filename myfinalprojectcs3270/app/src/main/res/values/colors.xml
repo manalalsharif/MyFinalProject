@@ -19,8 +19,8 @@
     <color name="primary_now_playing">#2F4159</color>
     <color name="primary_popular">#D9B5AD</color>
     <color name="primary_top">#D0DFF2</color>
-    <color name="primary_favorites">#D9B5AD</color>
+    <color name="primary_favorites">#F2E0D0</color>
 
-    <color name="movie_favorite">#D9B5AD</color>
+    <color name="movie_favorite">#F2D785</color>
 </resources>
 
