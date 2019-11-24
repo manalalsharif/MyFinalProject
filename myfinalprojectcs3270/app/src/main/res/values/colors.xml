@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F2D377</color>
-    <color name="colorPrimaryDark">#2F4159</color>
-    <color name="colorAccent">#8BADD9</color>
+<!--    <color name="colorPrimary">#A3B2BF</color>-->
+<!--    <color name="colorPrimaryDark">#736B5C</color>-->
+<!--    <color name="colorAccent">#8BADD9</color>-->
+<!--    <color name="materialBlack">#383838</color>-->
+
+<!--    <color name="primary_now_playing">#2F4159</color>-->
+<!--    <color name="primary_popular">#F2D785</color>-->
+<!--    <color name="primary_top">#D0DFF2</color>-->
+<!--    <color name="primary_favorites">#F2D785</color>-->
+
+<!--    <color name="movie_favorite">#F2D785</color>-->
+
+    <color name="colorPrimary">#7C9AA6</color>
+    <color name="colorPrimaryDark">#403C34</color>
+    <color name="colorAccent">#D9B5AD</color>
     <color name="materialBlack">#383838</color>
-
     <color name="primary_now_playing">#2F4159</color>
-    <color name="primary_popular">#F2D785</color>
+    <color name="primary_popular">#D9B5AD</color>
     <color name="primary_top">#D0DFF2</color>
-    <color name="primary_favorites">#F2D785</color>
+    <color name="primary_favorites">#D9B5AD</color>
 
-    <color name="movie_favorite">#F2C1BD</color>
+    <color name="movie_favorite">#D9B5AD</color>
 </resources>
 

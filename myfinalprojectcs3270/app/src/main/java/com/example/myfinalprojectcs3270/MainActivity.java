@@ -8,17 +8,22 @@ import com.example.myfinalprojectcs3270.Fragments.Home;
 import com.example.myfinalprojectcs3270.Fragments.MyCart;
 import com.example.myfinalprojectcs3270.Fragments.Popular;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-
+    //Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);

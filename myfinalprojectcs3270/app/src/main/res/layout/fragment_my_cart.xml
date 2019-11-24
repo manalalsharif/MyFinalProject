@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.MyCart">
 
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fontFamily="@font/carter_one"
         android:text="My Cart" />
 
 </FrameLayout>

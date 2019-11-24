@@ -31,7 +31,10 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_home, container, false);
-        int images[] = {R.drawable.s2, R.drawable.s3, R.drawable.s4};
+        int images[] =
+                {R.drawable.s1, R.drawable.s2, R.drawable.s3,
+                R.drawable.s5, R.drawable.s6, R.drawable.s7, R.drawable.s8, R.drawable.s9,R.drawable.s10,
+                R.drawable.s11, R.drawable.s12, R.drawable.s13, R.drawable.s14, R.drawable.s15};
 
         v_flipper = root.findViewById(R.id.v_flipper);
 
@@ -45,7 +48,7 @@ public class Home extends Fragment {
         ImageView imageView = new ImageView(getActivity());
         imageView.setBackgroundResource(image);
         v_flipper.addView(imageView);
-        v_flipper.setFlipInterval(4000); // 4 sec
+        v_flipper.setFlipInterval(3000); // 3 sec
         v_flipper.setAutoStart(true);
 
         //set animation
