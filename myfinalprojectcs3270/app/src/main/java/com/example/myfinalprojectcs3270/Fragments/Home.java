@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.example.myfinalprojectcs3270.R;
 
@@ -16,6 +18,7 @@ import com.example.myfinalprojectcs3270.R;
  */
 public class Home extends Fragment {
     View root;
+    ViewFlipper v_flipper;
 
 
     public Home() {
@@ -28,8 +31,27 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_home, container, false);
+        int images[] = {R.drawable.s2, R.drawable.s3, R.drawable.s4};
 
+        v_flipper = root.findViewById(R.id.v_flipper);
+
+        for(int image: images){
+            flipperImages(image);
+        }
         return root;
+    }
+
+    public void flipperImages(int image){
+        ImageView imageView = new ImageView(getActivity());
+        imageView.setBackgroundResource(image);
+        v_flipper.addView(imageView);
+        v_flipper.setFlipInterval(4000); // 4 sec
+        v_flipper.setAutoStart(true);
+
+        //set animation
+        v_flipper.setInAnimation(getActivity(), android.R.anim.slide_in_left);
+        v_flipper.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
+
     }
 
 }
