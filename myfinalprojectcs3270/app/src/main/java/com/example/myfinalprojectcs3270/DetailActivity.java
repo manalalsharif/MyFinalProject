@@ -135,6 +135,7 @@ public class DetailActivity extends AppCompatActivity {
                         //Changing the background color of the text view with the state of isFavorite variable.
                         if (isFavorite) {
                             movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.movie_favorite));
+                            movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_white));
                         }
                     }
                 });
@@ -158,6 +159,8 @@ public class DetailActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.white));
+                            movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_primry));
+
                             isFavorite = false;
                             Log.d("ADebug", "Deleted");
                         }

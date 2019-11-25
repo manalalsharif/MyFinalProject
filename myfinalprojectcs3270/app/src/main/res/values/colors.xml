@@ -11,10 +11,29 @@
 <!--    <color name="primary_favorites">#F2D785</color>-->
 
 <!--    <color name="movie_favorite">#F2D785</color>-->
+<!--so far those our choice-->
+<!--    <color name="colorPrimary">#D9B573</color>-->
+<!--    <color name="colorPrimaryDark">#403C34</color>-->
+<!--    <color name="colorAccent">#F2CF8D</color>-->
+<!--    <color name="materialBlack">#383838</color>-->
+<!--    <color name="primary_now_playing">#2F4159</color>-->
+<!--    <color name="primary_popular">#D9B5AD</color>-->
+<!--    <color name="primary_top">#D0DFF2</color>-->
+<!--    <color name="primary_favorites">#F2E0D0</color>-->
+<!--    <color name="primary_font">#403C34</color>-->
+<!--    <color name="primary_font_body">#403C34</color>-->
+<!--    <color name="Primary_toolbar">#D9B573</color>-->
+<!--    &lt;!&ndash;    <color name="Primary_toolbar">#D9B5AD</color>&ndash;&gt;-->
+<!--    <color name="toolbar_font_color">#2F4159</color>-->
+<!--    <color name="movie_favorite">#D9B5AD</color>-->
+<!--    <color name="colorButton">#869AA6</color>-->
+<!--    <color name="colorButtonFont">#F2F2F0</color>-->
 
-    <color name="colorPrimary">#D9B573</color>
-    <color name="colorPrimaryDark">#403C34</color>
-    <color name="colorAccent">#F2CF8D</color>
+
+
+    <color name="colorPrimary">#F2F2F2</color>
+    <color name="colorPrimaryDark">#8C0303</color>
+    <color name="colorAccent">#F2F2F2</color>
     <color name="materialBlack">#383838</color>
     <color name="primary_now_playing">#2F4159</color>
     <color name="primary_popular">#D9B5AD</color>
@@ -22,15 +41,16 @@
     <color name="primary_favorites">#F2E0D0</color>
     <color name="primary_font">#403C34</color>
     <color name="primary_font_body">#403C34</color>
-    <color name="Primary_toolbar">#D9B573</color>
+    <color name="Primary_toolbar">#8C0303</color>
 
     <!--    <color name="Primary_toolbar">#D9B5AD</color>-->
-    <color name="toolbar_font_color">#2F4159</color>
-    <color name="movie_favorite">#F2D785</color>
-    <color name="colorButton">#869AA6</color>
-    <color name="colorButtonFont">#F2F2F0</color>
+    <color name="toolbar_font_color">#F2F2F2</color>
+    <color name="movie_favorite">#8C0303</color>
+    <color name="colorButton">#F2F2F2</color>
+    <color name="colorButtonFont">#8C0303</color>
 
-
+    <color name="textColor_movie_favorite_white">#F2F2F2</color>
+    <color name="textColor_movie_favorite_primry">#8C0303</color>
 
 </resources>
 

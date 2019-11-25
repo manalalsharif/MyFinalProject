@@ -20,7 +20,8 @@
         app:scallopRadius="12dp"
         app:showBorder="true"
         app:showDivider="true"
-        app:ticketElevation="4dp" />
+        android:layout_marginBottom="60dp"
+       app:ticketElevation="4dp" />
 
     <ImageView
         android:id="@+id/movie_poster"
