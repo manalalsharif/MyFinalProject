@@ -5,7 +5,7 @@
 
 
     <EditText
-        android:id="@+id/textView1"
+        android:id="@+id/amountt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -14,8 +14,10 @@
 
     <Button
         android:id="@+id/order"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:textColor="@color/colorButtonFont"
+        android:background="@color/colorButton"
+        android:fontFamily="@font/simonetta_black"
         android:text="Pay"/>
 </LinearLayout>

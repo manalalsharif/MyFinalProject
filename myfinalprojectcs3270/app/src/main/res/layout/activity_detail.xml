@@ -168,7 +168,11 @@
                 android:id="@+id/addToCart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add To Cart" />
+                android:text="Add To Cart"
+                android:textColor="@color/colorButtonFont"
+                android:background="@color/colorButton"
+                android:textSize="12pt"
+                android:fontFamily="@font/simonetta_black"/>
 
         </LinearLayout>
 

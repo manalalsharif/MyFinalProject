@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.Account">
 
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fontFamily="@font/simonetta_black"-->
+<!--        android:text="Account" />-->
+    
+    <Button
+        android:id="@+id/history"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textColor="@color/colorButtonFont"
+        android:background="@color/colorButton"
         android:fontFamily="@font/simonetta_black"
-        android:text="Account" />
+        android:textAlignment="center"
+        android:textSize="16pt"
+        android:layout_gravity="center">
 
-</FrameLayout>
+    </Button>
+
+
+
+
+
+
+</LinearLayout>

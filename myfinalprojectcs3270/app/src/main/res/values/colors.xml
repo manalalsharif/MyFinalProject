@@ -12,15 +12,24 @@
 
 <!--    <color name="movie_favorite">#F2D785</color>-->
 
-    <color name="colorPrimary">#7C9AA6</color>
+    <color name="colorPrimary">#D9B573</color>
     <color name="colorPrimaryDark">#403C34</color>
-    <color name="colorAccent">#D9B5AD</color>
+    <color name="colorAccent">#F2CF8D</color>
     <color name="materialBlack">#383838</color>
     <color name="primary_now_playing">#2F4159</color>
     <color name="primary_popular">#D9B5AD</color>
     <color name="primary_top">#D0DFF2</color>
     <color name="primary_favorites">#F2E0D0</color>
-
+    <color name="primary_font">#403C34</color>
+    <color name="primary_font_body">#403C34</color>
+    <color name="Primary_toolbar">#D9B573</color>
+<!--    <color name="Primary_toolbar">#D9B5AD</color>-->
+    <color name="toolbar_font_color">#2F4159</color>
     <color name="movie_favorite">#F2D785</color>
+    <color name="colorButton">#869AA6</color>
+    <color name="colorButtonFont">#F2F2F0</color>
+
+
+
 </resources>
 
