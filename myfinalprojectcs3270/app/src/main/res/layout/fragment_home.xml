@@ -14,23 +14,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="300dp">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary" />
 
-            <LinearLayout
-                android:id="@+id/image_page_dots"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:orientation="horizontal" />
             <ViewFlipper
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
                 android:id="@+id/v_flipper">
             </ViewFlipper>
 

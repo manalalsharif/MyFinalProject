@@ -23,7 +23,8 @@
     <color name="primary_font">#403C34</color>
     <color name="primary_font_body">#403C34</color>
     <color name="Primary_toolbar">#D9B573</color>
-<!--    <color name="Primary_toolbar">#D9B5AD</color>-->
+
+    <!--    <color name="Primary_toolbar">#D9B5AD</color>-->
     <color name="toolbar_font_color">#2F4159</color>
     <color name="movie_favorite">#F2D785</color>
     <color name="colorButton">#869AA6</color>
