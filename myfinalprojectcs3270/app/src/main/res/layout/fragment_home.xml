@@ -52,7 +52,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="270dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/pic_logo"
             android:id="@+id/logo">
 
         </ImageView>

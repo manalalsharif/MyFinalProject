@@ -135,7 +135,6 @@ public class DetailActivity extends AppCompatActivity {
                         //Changing the background color of the text view with the state of isFavorite variable.
                         if (isFavorite) {
                             movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.movie_favorite));
-                            movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_white));
                         }
                     }
                 });
@@ -155,12 +154,13 @@ public class DetailActivity extends AppCompatActivity {
                     favoriteMovie = new MovieItem(movieID, name, image, overview, rating, release);
                     //Deleting the movie from the database.
                     movieDatabase.movieDao().deleteMovie(favoriteMovie);
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.white));
-                            movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_primry));
-
+                           // movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_primry));
+                           // movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_primry));
+                            movieFavorite.setBackgroundResource(R.drawable.rm_from_favorites_icon);
                             isFavorite = false;
                             Log.d("ADebug", "Deleted");
                         }
@@ -179,7 +179,10 @@ public class DetailActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.movie_favorite));
+                            //movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_white));
+                          //movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_white));
+                            movieFavorite.setBackgroundResource(R.drawable.add_to_favorites_icon);
+
                             isFavorite = true;
                             Log.d("ADebug", "Inserted");
                         }

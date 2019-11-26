@@ -121,8 +121,8 @@
                             android:paddingTop="16dp"
                             android:paddingEnd="8dp"
                             android:paddingBottom="16dp"
-                            android:text="Favorite"
                             android:textColor="@color/materialBlack"
+
                             android:textSize="16sp" />
 
                     </androidx.cardview.widget.CardView>
