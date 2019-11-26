@@ -16,8 +16,10 @@
         android:id="@+id/order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorButtonFont"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@color/colorButton"
         android:fontFamily="@font/simonetta_black"
-        android:text="Pay"/>
+        android:text="Pay"
+        android:textColor="@color/colorButtonFont" />
 </LinearLayout>

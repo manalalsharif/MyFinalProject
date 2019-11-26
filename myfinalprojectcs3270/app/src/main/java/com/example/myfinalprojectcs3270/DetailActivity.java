@@ -2,8 +2,6 @@ package com.example.myfinalprojectcs3270;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -17,14 +15,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.myfinalprojectcs3270.DB.MovieDatabase;
 import com.example.myfinalprojectcs3270.Object.MovieItem;
 import com.example.myfinalprojectcs3270.Utilities.AppExecutors;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -134,7 +129,9 @@ public class DetailActivity extends AppCompatActivity {
                     public void run() {
                         //Changing the background color of the text view with the state of isFavorite variable.
                         if (isFavorite) {
-                            movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.movie_favorite));
+                            movieFavorite.setBackgroundResource(R.drawable.ic_favorite);
+                        } else {
+                            movieFavorite.setBackgroundResource(R.drawable.ic_favorite_border);
                         }
                     }
                 });
@@ -154,13 +151,11 @@ public class DetailActivity extends AppCompatActivity {
                     favoriteMovie = new MovieItem(movieID, name, image, overview, rating, release);
                     //Deleting the movie from the database.
                     movieDatabase.movieDao().deleteMovie(favoriteMovie);
-
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                           // movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_primry));
-                           // movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_primry));
-                            movieFavorite.setBackgroundResource(R.drawable.rm_from_favorites_icon);
+//                            movieFavorite.setBackgroundResource(R.drawable.rm_from_favorites_icon);
+                            movieFavorite.setBackgroundResource(R.drawable.ic_favorite_border);
                             isFavorite = false;
                             Log.d("ADebug", "Deleted");
                         }
@@ -179,10 +174,8 @@ public class DetailActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            //movieFavorite.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_white));
-                          //movieFavorite.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.textColor_movie_favorite_white));
-                            movieFavorite.setBackgroundResource(R.drawable.add_to_favorites_icon);
-
+//                            movieFavorite.setBackgroundResource(R.drawable.add_to_favorites_icon);
+                            movieFavorite.setBackgroundResource(R.drawable.ic_favorite);
                             isFavorite = true;
                             Log.d("ADebug", "Inserted");
                         }

@@ -73,8 +73,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         Picasso.get()
                 .load(movieItem.getImage())
                 .into(holder.moviePoster);
-
-        Log.d("test", "image url:" +movieItem.getImage());
         holder.movieName.setText(movieItem.getName());
         holder.movieOverview.setText(movieItem.getOverview());
     }
@@ -88,10 +86,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         }
     }
 
-    public boolean toggleViewType() {
-        isGrid = !isGrid;
-        return isGrid;
-    }
 
     @Override
     public int getItemCount() {
