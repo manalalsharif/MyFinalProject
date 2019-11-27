@@ -27,7 +27,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("History");
+            getSupportActionBar().setTitle("Your Purchased History");
 
         }
 
