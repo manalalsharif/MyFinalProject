@@ -5,6 +5,12 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,21 +19,15 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.myfinalprojectcs3270.Adapters.MovieAdapter;
+import com.example.myfinalprojectcs3270.DetailActivity;
+import com.example.myfinalprojectcs3270.Object.MovieItem;
 import com.example.myfinalprojectcs3270.R;
 
 import org.json.JSONArray;
@@ -36,11 +36,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.example.myfinalprojectcs3270.Adapters.MovieAdapter;
-import com.example.myfinalprojectcs3270.Object.MovieItem;
-import com.example.myfinalprojectcs3270.R;
-import com.example.myfinalprojectcs3270.DetailActivity;
 
 
 /**

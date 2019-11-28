@@ -1,7 +1,12 @@
 package com.example.myfinalprojectcs3270;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import com.example.myfinalprojectcs3270.Fragments.Account;
 import com.example.myfinalprojectcs3270.Fragments.Home;
@@ -9,14 +14,9 @@ import com.example.myfinalprojectcs3270.Fragments.MyCart;
 import com.example.myfinalprojectcs3270.Fragments.Popular;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.MenuItem;
-
 public class MainActivity extends AppCompatActivity {
     //Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new Home())
+                .replace(R.id.fragment_container_main, new Home())
                 .commit();
     }
 
@@ -53,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment)
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container_main, selectedFragment)
                     .commit();
 
             return true;
