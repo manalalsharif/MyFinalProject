@@ -49,4 +49,5 @@ dependencies {
     implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
 
     implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+//    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
 }

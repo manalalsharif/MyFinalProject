@@ -54,5 +54,7 @@
         android:outlineAmbientShadowColor="@color/colorPrimaryDark">
     </ImageView>
 
-</LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
