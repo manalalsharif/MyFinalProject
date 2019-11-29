@@ -3,7 +3,6 @@ package com.example.myfinalprojectcs3270.Utilities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +18,6 @@ import java.io.InputStream;
 public class HomeActivitySplash extends AppCompatActivity {
 
     private GifImageView gifImageView;
-    private ProgressBar progressBar;
     private static int SPLASH_TIME_OUT = 4000; //4000 = 4 sec
 
 
@@ -30,7 +28,6 @@ public class HomeActivitySplash extends AppCompatActivity {
         setContentView(R.layout.activity_home_splash);
 
         gifImageView = (GifImageView) findViewById(R.id.gifFigmaView);
-
         try{
             InputStream inputStream = getAssets().open("logo_gif.gif");
             byte[] bytes = IOUtils.toByteArray(inputStream);
