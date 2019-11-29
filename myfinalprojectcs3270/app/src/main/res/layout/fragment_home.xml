@@ -38,20 +38,40 @@
             android:gravity="center"
             android:orientation="horizontal"
             tools:ignore="NotSibling" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Get your Ticket Now!"
-            android:fontFamily="@font/simonetta_black"
-            android:textAlignment="center"
-            android:textColor="@color/primary_font_body"
-            android:textSize="30dp">
+<!--        <TextView-->
+<!--            android:id="@+id/get_ur_ticket_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Get your Ticket Now!"-->
+<!--            android:fontFamily="@font/simonetta_black"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/primary_font_body"-->
+<!--            android:textSize="30dp">-->
 
-        </TextView>
+<!--        </TextView>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center">
+
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/buy_ticket"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/buy_ticket_gif"
+            android:layout_gravity="center">
+
+        </ImageView>
+    </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_gravity="center"
             android:src="@drawable/home_sport_slide_4_pic"
             android:id="@+id/logo">
 
