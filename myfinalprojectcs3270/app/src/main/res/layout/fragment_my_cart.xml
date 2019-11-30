@@ -8,11 +8,21 @@
     <include
         layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <Button
+        android:id="@+id/pay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fontFamily="@font/carter_one"
-        android:text="My Cart" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorButton"
+        android:fontFamily="@font/simonetta_black"
+        android:text="Pay"
+        android:textAlignment="center"
+        android:textColor="@color/colorButtonFont"
+        android:textSize="16pt">
+
+    </Button>
 
 </FrameLayout>

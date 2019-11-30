@@ -9,12 +9,7 @@
     <include
         layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
 
-
-    </LinearLayout>
     <TextView
         android:id="@+id/splash_welcome"
         android:layout_width="wrap_content"
@@ -22,7 +17,7 @@
         android:text="Welcome"
         android:layout_centerVertical="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:textSize="70dp"
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="@font/simonetta_black"
