@@ -22,8 +22,6 @@ public class HomeActivitySplash extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 4000; //4000 = 4 sec
 
 
-
-
     //Set GIFImageView resource
     @Override
     protected void onCreate(Bundle savedInstanceState) {
