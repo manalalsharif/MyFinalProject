@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.myfinalprojectcs3270.MainActivity;
 import com.example.myfinalprojectcs3270.R;
@@ -20,12 +21,15 @@ public class HomeActivitySplash extends AppCompatActivity {
     private GifImageView gifImageView;
     private static int SPLASH_TIME_OUT = 4000; //4000 = 4 sec
 
-
     //Set GIFImageView resource
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_splash);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setIcon(getDrawable(R.drawable.ic_shopping_cart_white));
 
         gifImageView = (GifImageView) findViewById(R.id.gifFigmaView);
         try{
