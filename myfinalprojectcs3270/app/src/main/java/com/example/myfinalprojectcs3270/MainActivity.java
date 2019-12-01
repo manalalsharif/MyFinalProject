@@ -16,7 +16,7 @@ import com.example.myfinalprojectcs3270.Fragments.Popular;
 import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity implements CartDialog.sendCartList {
+public class MainActivity extends AppCompatActivity {
     //Toolbar toolbar;
 
     @Override
@@ -65,10 +65,4 @@ public class MainActivity extends AppCompatActivity implements CartDialog.sendCa
         }
     };
 
-    @Override
-    public void addStuffToCart(MyCartItem newItem) {
-        MyCart mc = (MyCart)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_container_main);
-        mc.addStuffToCart(newItem);
-    }
 }

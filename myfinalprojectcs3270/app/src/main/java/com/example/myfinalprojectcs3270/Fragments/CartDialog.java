@@ -20,6 +20,8 @@ import android.widget.Toast;
 import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.R;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,22 +33,7 @@ public class CartDialog extends DialogFragment {
     private ImageView cartDecrement, cartIncrement, cartClose;
     private TextView updateQtyDialog, quantity;
     final int[] cartCounter = {0};
-
-    //create interface
-    public interface sendCartList{
-        void addStuffToCart(MyCartItem newItem);
-    }
-
-    //create listener
-    private sendCartList listener;
-
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        listener = (sendCartList) activity;
-    }
+    public static ArrayList<MyCartItem> cartItems = new ArrayList<>();
 
 
     public CartDialog() {
@@ -108,14 +95,12 @@ public class CartDialog extends DialogFragment {
                 cartItem.setTotal(cartItem.getQuantity() * cartItem.getPrice());
 
                 //calling listener that will receive the newly added cart item in the MyCart fragment
-                listener.addStuffToCart(cartItem);
-                //cartItems.add(cartItem);
+                cartItems.add(cartItem);
 
 
                 //test
-                Log.d("test", "ITEM IN CART: " + cartItem.getTitle());
+                Log.d("test", "ITEM IN CART: " + cartItem.getQuantity() + " " +  cartItem.getTitle() + " movies.");
 
-                //call listener and pass array list? which would be received in cart activity
                 dismiss();
             }
 

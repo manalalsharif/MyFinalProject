@@ -19,11 +19,10 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyCart extends Fragment implements CartDialog.sendCartList {
+public class MyCart extends Fragment {
 
     View root;
     private Button payconfirmed;
-    public static ArrayList<MyCartItem> cartItems = new ArrayList<>();
 
     public MyCart() {
         // Required empty public constructor
@@ -54,8 +53,4 @@ public class MyCart extends Fragment implements CartDialog.sendCartList {
         return root;
     }
 
-    @Override
-    public void addStuffToCart(MyCartItem newItem) {
-        cartItems.add(newItem);
-    }
 }
