@@ -8,23 +8,22 @@ import androidx.room.PrimaryKey;
 
 import static androidx.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "mycart",
-        foreignKeys = @ForeignKey(entity = MovieItem.class,
-        parentColumns = "id",
-        childColumns = "movie_id",
-        onDelete = CASCADE))
+@Entity(tableName = "mycart")
 public class MyCartItem {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int myCart_id;
-    @ColumnInfo(name = "movie_id")
-    private String movie_id;
     private String title;
     private String date;
+    private int quantity;
     private double price;
+    private String poster_path;
+    private double total;
 
-    public MyCartItem(){};
+    public MyCartItem(){
+        this.price = 9.99;
+    };
 
     public MyCartItem(int myCartId, String title) {
         this.myCart_id = myCartId;
@@ -32,6 +31,7 @@ public class MyCartItem {
         //defaults
         this.price = 9.99;
         this.date = date;
+        this.quantity = 1;
     }
 
     @NonNull
@@ -41,14 +41,6 @@ public class MyCartItem {
 
     public void setMyCart_id(@NonNull int myCart_id) {
         this.myCart_id = myCart_id;
-    }
-
-    public String getMovie_id() {
-        return movie_id;
-    }
-
-    public void setMovie_id(String movie_id) {
-        this.movie_id = movie_id;
     }
 
     public String getTitle() {
@@ -71,8 +63,33 @@ public class MyCartItem {
         return price;
     }
 
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
+    }
+
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
 }
 

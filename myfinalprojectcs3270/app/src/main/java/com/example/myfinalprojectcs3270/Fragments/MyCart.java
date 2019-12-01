@@ -9,13 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyCart extends Fragment {
+public class MyCart extends Fragment implements CartDialog.sendCartList {
 
+    public static ArrayList<MyCartItem> cartItems = new ArrayList<>();
 
     public MyCart() {
         // Required empty public constructor
@@ -29,4 +33,8 @@ public class MyCart extends Fragment {
         return inflater.inflate(R.layout.fragment_my_cart, container, false);
     }
 
+    @Override
+    public void addStuffToCart(MyCartItem newItem) {
+        cartItems.add(newItem);
+    }
 }
