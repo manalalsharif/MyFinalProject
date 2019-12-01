@@ -48,38 +48,4 @@ public class Account extends Fragment {
 
         return root;
     }
-
-
-//    @Override
-//    public void onClick(View v) {
-//        // TODO Auto-generated method stub
-//
-//        if(v.getId()==R.id.btnBUY)
-//        {
-//            if(BillingHelper.isBillingSupported()){
-//
-//                BillingHelper.requestPurchase(mContext, "com.test.buy");
-//
-//                // android.test.purchased or android.test.canceled or android.test.refunded or com.blundell.item.passport
-//            } else {
-//                Log.i(TAG,"Can't purchase on this device");
-//                Toast.makeText(this, "Can't purchase on this device, Billing not Supprted", Toast.LENGTH_SHORT).show();
-//
-//                hajj.setEnabled(false); // XXX press button before service started will disable when it shouldnt
-//            }
-//
-//        }
-//
-//        public Handler mTransactionHandler = new Handler(){
-//            public void handleMessage(android.os.Message msg) {
-//                Log.i(TAG, "Transaction complete");
-//                Log.i(TAG, "Transaction status: "+BillingHelper.latestPurchase.purchaseState);
-//                Log.i(TAG, "Item purchased is: "+BillingHelper.latestPurchase.productId);
-//
-//                if(BillingHelper.latestPurchase.isPurchased()){
-//                    showItem();
-//                }
-//            };
-
-
 }

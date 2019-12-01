@@ -1,25 +1,25 @@
 package com.example.myfinalprojectcs3270.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.example.myfinalprojectcs3270.Object.MyCartItem;
+import androidx.fragment.app.Fragment;
+
+import com.example.myfinalprojectcs3270.ConfirmPaymentActivity;
 import com.example.myfinalprojectcs3270.R;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyCart extends Fragment implements CartDialog.sendCartList {
+public class MyCart extends Fragment {
 
-    public static ArrayList<MyCartItem> cartItems = new ArrayList<>();
+    View root;
+    private Button payconfirmed;
 
     public MyCart() {
         // Required empty public constructor
@@ -30,11 +30,24 @@ public class MyCart extends Fragment implements CartDialog.sendCartList {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_cart, container, false);
+        root = inflater.inflate(R.layout.fragment_my_cart, container, false);
+
+        payconfirmed = root.findViewById(R.id.pay);
+
+
+        payconfirmed = (Button) root.findViewById(R.id.pay);
+        payconfirmed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ConfirmPaymentActivity.class);
+                startActivity(intent);
+
+
+
+            }
+        });
+
+        return root;
     }
 
-    @Override
-    public void addStuffToCart(MyCartItem newItem) {
-        cartItems.add(newItem);
-    }
 }

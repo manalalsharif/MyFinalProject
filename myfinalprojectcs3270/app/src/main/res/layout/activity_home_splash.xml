@@ -6,67 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".Utilities.HomeActivitySplash">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-
-    </LinearLayout>
     <TextView
         android:id="@+id/splash_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome"
-        android:layout_centerVertical="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:textSize="70dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/simonetta_black"
         android:shadowColor="@color/colorPrimary"
+        android:text="WELCOME"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="60dp"
         tools:ignore="MissingConstraints">
+
     </TextView>
 
     <TextView
         android:id="@+id/to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="to"
-        android:layout_centerVertical="false"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
         android:layout_marginTop="130dp"
-        android:textSize="60dp"
-        android:textColor="@color/colorPrimaryDark"
         android:fontFamily="@font/simonetta_black"
         android:shadowColor="@color/colorPrimary"
+        android:text="to"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="60dp"
         tools:ignore="MissingConstraints">
+
     </TextView>
+
     <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:src="@drawable/pic_logo"
-        android:outlineAmbientShadowColor="@color/colorPrimaryDark">
-    </ImageView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+            android:src="@drawable/pic_logo">
+
+        </ImageView>
     </LinearLayout>
-<FrameLayout
-    android:layout_width="300dp"
-    android:layout_height="300dp"
-    android:layout_centerVertical="false"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="550dp">
 
-    <com.felipecsl.gifimageview.library.GifImageView
-        android:id="@+id/gifFigmaView"
-        android:scaleType="fitCenter"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="550dp">
 
-
-</FrameLayout>
+        <com.felipecsl.gifimageview.library.GifImageView
+            android:id="@+id/gifFigmaView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
 
 </RelativeLayout>
