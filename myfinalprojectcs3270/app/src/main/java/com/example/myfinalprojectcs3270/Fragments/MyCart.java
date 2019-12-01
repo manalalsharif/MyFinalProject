@@ -11,15 +11,19 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.example.myfinalprojectcs3270.ConfirmPaymentActivity;
+import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyCart extends Fragment {
+public class MyCart extends Fragment implements CartDialog.sendCartList {
 
     View root;
     private Button payconfirmed;
+    public static ArrayList<MyCartItem> cartItems = new ArrayList<>();
 
     public MyCart() {
         // Required empty public constructor
@@ -50,4 +54,8 @@ public class MyCart extends Fragment {
         return root;
     }
 
+    @Override
+    public void addStuffToCart(MyCartItem newItem) {
+        cartItems.add(newItem);
+    }
 }
