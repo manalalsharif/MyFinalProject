@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:gravity="end|center_vertical">
 
             <ImageView
@@ -24,7 +25,8 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:src="@drawable/ic_close" />
+                android:src="@drawable/ic_close"
+                android:background="@color/textColor_movie_favorite_white"/>
 
         </LinearLayout>
 
@@ -37,7 +39,9 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+
+            android:background="@color/textColor_movie_favorite_white">
 
 
             <ImageView
@@ -73,8 +77,12 @@
             android:background="@color/colorPrimary"
             android:text="Add to cart"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:fontFamily="@font/simonetta_black"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
 
     </LinearLayout>
 
