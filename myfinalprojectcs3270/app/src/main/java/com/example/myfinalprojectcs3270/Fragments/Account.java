@@ -12,6 +12,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myfinalprojectcs3270.HistoryActivity;
 import com.example.myfinalprojectcs3270.R;
+import com.felipecsl.gifimageview.library.GifImageView;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +26,8 @@ public class Account extends Fragment {
 
     View root;
     private Button history;
+    private GifImageView gifImageView1;
+
     public Account() {
         // Required empty public constructor
     }
@@ -41,10 +49,18 @@ public class Account extends Fragment {
                 Intent intent = new Intent(getActivity(), HistoryActivity.class);
                 startActivity(intent);
 
-
-
             }
         });
+
+        gifImageView1 = (GifImageView) root.findViewById(R.id.click_here);
+        try{
+            InputStream inputStream = getResources().getAssets().open("gif_click_here1.gif");
+            byte[] bytes = IOUtils.toByteArray(inputStream);
+            gifImageView1.setBytes(bytes);
+            gifImageView1.startAnimation();
+        }
+        catch (IOException ex){
+        }
 
         return root;
     }

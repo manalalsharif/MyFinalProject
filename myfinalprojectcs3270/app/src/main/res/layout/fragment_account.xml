@@ -1,41 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".Fragments.Account">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="200dp"
+        android:src="@drawable/re_order">
+
+    </ImageView>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Check your History"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="center"
+            android:fontFamily="@font/simonetta_black"
+            android:padding="10dp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="400dp"
+    android:layout_marginBottom="100dp">
+
+    <com.felipecsl.gifimageview.library.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/click_here"
+        android:scaleType="fitCenter">
+
+    </com.felipecsl.gifimageview.library.GifImageView>
+
+
+</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
             android:id="@+id/history"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="35dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:background="@color/colorButton"
             android:fontFamily="@font/simonetta_black"
             android:text="History"
             android:textAlignment="center"
             android:textColor="@color/colorButtonFont"
-            android:textSize="16pt">
+            android:textSize="15pt">
 
         </Button>
-
-
-
-
     </LinearLayout>
+</RelativeLayout>
 
-<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:fontFamily="@font/simonetta_black"-->
-<!--        android:text="Account" />-->
-
-
-</LinearLayout>
