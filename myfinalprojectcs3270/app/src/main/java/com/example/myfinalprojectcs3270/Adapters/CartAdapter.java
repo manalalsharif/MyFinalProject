@@ -19,17 +19,19 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private Context context;
     private List<MyCartItem> cartItemList;
-    private CartAdapter.RecyclerClickListener recyclerClickListener;
+
+    private RecyclerClickListener recyclerClickListener;
 
     public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-//        ImageView moviePoster;
-//        TextView movieName, movieOverview;
+        ImageView moviePoster, cartDecrement, cartIncrement, cartDelete;
+        TextView movieTitle, moviePrice, movieQuantity;
 
         public CartViewHolder(View view) {
             super(view);
-//            moviePoster = view.findViewById(R.id.movie_poster);
-//            movieName = view.findViewById(R.id.movie_name);
-//            movieOverview = view.findViewById(R.id.movie_overview);
+            moviePoster = view.findViewById(R.id.list_image_cart);
+            cartDecrement = view.findViewById(R.id.cart_decrement);
+            cartDecrement = view.findViewById(R.id.cart_decrement);
+
             itemView.setOnClickListener(this);
         }
 
