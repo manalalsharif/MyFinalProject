@@ -1,0 +1,70 @@
+package com.example.myfinalprojectcs3270.Adapters;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myfinalprojectcs3270.Object.MyCartItem;
+import com.example.myfinalprojectcs3270.R;
+
+import java.util.List;
+
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
+
+    private Context context;
+    private List<MyCartItem> cartItemList;
+    private CartAdapter.RecyclerClickListener recyclerClickListener;
+
+    public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+//        ImageView moviePoster;
+//        TextView movieName, movieOverview;
+
+        public CartViewHolder(View view) {
+            super(view);
+//            moviePoster = view.findViewById(R.id.movie_poster);
+//            movieName = view.findViewById(R.id.movie_name);
+//            movieOverview = view.findViewById(R.id.movie_overview);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int clickedPosition = getAdapterPosition();
+            recyclerClickListener.onItemClicked(clickedPosition);
+        }
+    }
+
+    public CartAdapter(Context context, List<MyCartItem> cartItemList, CartAdapter.RecyclerClickListener recyclerClickListener) {
+        this.context = context;
+        this.cartItemList = cartItemList;
+        this.recyclerClickListener = recyclerClickListener;
+    }
+
+    @NonNull
+    @Override
+    public CartAdapter.CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view;
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_row, null);
+        return new CartViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull CartAdapter.CartViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
+    public interface RecyclerClickListener {
+        void onItemClicked(int clickedItemIndex);
+    }
+}

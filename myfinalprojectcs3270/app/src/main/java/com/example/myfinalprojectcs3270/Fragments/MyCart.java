@@ -7,11 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myfinalprojectcs3270.Adapters.CartAdapter;
 import com.example.myfinalprojectcs3270.ConfirmPaymentActivity;
+import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +26,13 @@ import com.example.myfinalprojectcs3270.R;
 public class MyCart extends Fragment {
 
     View root;
+
+    private RecyclerView cartRecycler;
+    private List<MyCartItem> cartItemList;
+    private CartAdapter cartAdapter;
+    private RecyclerView.LayoutManager layoutManager;
     private Button payconfirmed;
+
 
     public MyCart() {
         // Required empty public constructor
@@ -32,10 +45,13 @@ public class MyCart extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_my_cart, container, false);
 
-        payconfirmed = root.findViewById(R.id.pay);
+        //set up recycler view for fragment
+        cartItemList = new ArrayList<>();
 
 
-        payconfirmed = (Button) root.findViewById(R.id.pay);
+
+        //find and link up pay button
+        payconfirmed = (Button) root.findViewById(R.id.btnPay);
         payconfirmed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
