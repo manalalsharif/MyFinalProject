@@ -11,9 +11,9 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cart_recyler"
+            android:id="@+id/movies_recycler"
             android:layout_width="match_parent"
-            android:layout_height="455dp"
+            android:layout_height="548dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
