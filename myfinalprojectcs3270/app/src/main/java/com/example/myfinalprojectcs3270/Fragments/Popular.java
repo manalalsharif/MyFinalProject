@@ -74,7 +74,7 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
 
         //Setting up the recycler view for the fragment.
         movieItemList = new ArrayList<>();
-        moviesRecycler = view.findViewById(R.id.movies_recycler);
+        moviesRecycler = view.findViewById(R.id.cart_recycler);
         movieAdapter = new MovieAdapter(this.getContext().getApplicationContext(), movieItemList, this);
 
         layoutManager = new GridLayoutManager(this.getActivity(), numberOfColumns());
