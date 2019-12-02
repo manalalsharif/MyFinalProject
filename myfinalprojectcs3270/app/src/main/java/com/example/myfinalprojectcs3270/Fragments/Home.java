@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myfinalprojectcs3270.R;
 import com.felipecsl.gifimageview.library.GifImageView;
@@ -24,6 +25,7 @@ public class Home extends Fragment {
      View root;
      ViewFlipper v_flipper;
     private GifImageView gifImageView1;
+    private GifImageView gifFigmaView_buy;
 
     public Home() {
         // Required empty public constructor
@@ -63,9 +65,20 @@ public class Home extends Fragment {
         v_flipper.setFlipInterval(3000); // 3 sec
         v_flipper.setAutoStart(true);
 
-        //set animation
+        //set animation for images
         v_flipper.setInAnimation(getActivity(), android.R.anim.slide_in_left);
         v_flipper.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
 
+
+        //Set onclick method when click on image go to popular movies fragment
+        gifFigmaView_buy = root.findViewById(R.id.gifFigmaView_buy);
+        gifFigmaView_buy.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container_main, new Popular());
+                fr.commit();
+            }
+        });
     }
 }
