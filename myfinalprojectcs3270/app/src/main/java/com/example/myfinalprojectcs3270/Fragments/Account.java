@@ -7,11 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myfinalprojectcs3270.HistoryActivity;
 import com.example.myfinalprojectcs3270.R;
+import com.felipecsl.gifimageview.library.GifImageView;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +28,9 @@ public class Account extends Fragment {
 
     View root;
     private Button history;
+    private GifImageView gifImageViewGoToHistory;
+    private ImageView reOrder;
+
     public Account() {
         // Required empty public constructor
     }
@@ -41,11 +52,34 @@ public class Account extends Fragment {
                 Intent intent = new Intent(getActivity(), HistoryActivity.class);
                 startActivity(intent);
 
-
-
             }
         });
 
+        gifImageViewGoToHistory = (GifImageView) root.findViewById(R.id.click_here);
+        try{
+            InputStream inputStream = getResources().getAssets().open("gif_click_here1.gif");
+            byte[] bytes = IOUtils.toByteArray(inputStream);
+            gifImageViewGoToHistory.setBytes(bytes);
+            gifImageViewGoToHistory.startAnimation();
+        }
+        catch (IOException ex){
+        }
+
+        //Set onclick method when click on image go to popular movies fragment
+        reOrder = root.findViewById(R.id.reOrder);
+        reOrder.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container_main, new Popular());
+                fr.commit();
+            }
+        });
+
+
         return root;
     }
+
+
+
 }
