@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,8 +31,11 @@ public class MyCart extends Fragment {
     private List<MyCartItem> cartItemList;
     private CartAdapter cartAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private Button payconfirmed;
     private Button checkOut;
+
+    public static TextView grandTotal;
+    public static double grandTotalplus;
+    public static ArrayList<MyCartItem> temparraylist;
 
 
     public MyCart() {

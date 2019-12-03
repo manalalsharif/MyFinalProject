@@ -22,6 +22,8 @@ import com.example.myfinalprojectcs3270.R;
 
 import java.util.ArrayList;
 
+import static com.example.myfinalprojectcs3270.Fragments.MyCart.temparraylist;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,12 +96,11 @@ public class CartDialog extends DialogFragment {
                 cartItem.setTitle(name);
                 cartItem.setTotal(cartItem.getQuantity() * cartItem.getPrice());
 
-                //calling listener that will receive the newly added cart item in the MyCart fragment
-                cartItems.add(cartItem);
-
+                //add it to temparraylist in mycart
+                temparraylist.add(cartItem);
 
                 //test
-                Log.d("test", "ITEM IN CART: " + cartItem.getQuantity() + " " +  cartItem.getTitle() + " movies.");
+                Log.d("test", "ITEM IN CART: " + cartItem.getQuantity() + " " +  cartItem.getTitle() + " movie(s).");
 
                 dismiss();
             }
