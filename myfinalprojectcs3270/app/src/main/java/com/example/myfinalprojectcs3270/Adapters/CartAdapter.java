@@ -29,10 +29,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         public CartViewHolder(View view) {
             super(view);
             moviePoster = view.findViewById(R.id.list_image_cart);
+            movieTitle = view.findViewById(R.id.product_cart_name);
+            moviePrice = view.findViewById(R.id.product_cart_price);
             cartDecrement = view.findViewById(R.id.cart_decrement);
-            cartDecrement = view.findViewById(R.id.cart_decrement);
-
-            itemView.setOnClickListener(this);
+            movieQuantity = view.findViewById(R.id.cart_product_quantity_tv);
+            cartIncrement = view.findViewById(R.id.cart_increment);
+            cartDelete = view.findViewById(R.id.delete_item_from_cart);
         }
 
         @Override
