@@ -31,9 +31,6 @@ public class HistoryActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Your Purchased History");
         }
 
-//        recyclerView = findViewById(R.id.history_recycler);
-//        layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
 
     }
     @Override

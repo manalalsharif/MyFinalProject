@@ -1,25 +1,90 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_pay"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#8C0303"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp">
+        <ImageView
+            android:id="@+id/reOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="200dp"
+            android:src="@drawable/amount">
 
-    <EditText
-        android:id="@+id/amountt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        </ImageView>
 
-        android:text="72.00"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/order"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="400dp">
+        <EditText
+            android:id="@+id/amountt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:fontFamily="@font/simonetta_black"
+            android:textSize="20dp"
+            android:text="72.00"
+            android:textAppearance="?android:attr/textAppearanceSmall">
+
+        </EditText>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/colorButton"
-        android:fontFamily="@font/simonetta_black"
-        android:text="Pay"
-        android:textColor="@color/colorButtonFont" />
-</LinearLayout>
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="100dp">
+
+        <com.felipecsl.gifimageview.library.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/click_here"
+            android:scaleType="fitCenter">
+
+        </com.felipecsl.gifimageview.library.GifImageView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/order"
+            android:text="Pay"
+
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorButton"
+            android:fontFamily="@font/simonetta_black"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="13pt"
+            android:drawableTop="@drawable/ic_payment_black_24dp"
+            android:layout_weight="1">
+
+        </Button>
+    </LinearLayout>
+</RelativeLayout>

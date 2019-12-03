@@ -25,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="70dp"
             android:layout_gravity="center">
             <TextView
                 android:id="@+id/textView"
@@ -47,17 +48,11 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnPay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pay" />
-
-        <Button
             android:id="@+id/checkout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CHECKOUT"
-            android:textSize="20dp"
+            android:textSize="13pt"
             android:fontFamily="@font/simonetta_black"
             android:textColor="@color/colorPrimaryDark"
             android:background="@color/textColor_movie_favorite_white"/>

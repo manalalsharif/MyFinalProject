@@ -44,7 +44,6 @@ public class Account extends Fragment {
 
         history = root.findViewById(R.id.history);
 
-
         history = (Button) root.findViewById(R.id.history);
         history.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -22,8 +22,8 @@ import java.io.InputStream;
  * A simple {@link Fragment} subclass.
  */
 public class Home extends Fragment {
-     View root;
-     ViewFlipper v_flipper;
+    View root;
+    ViewFlipper v_flipper;
     private GifImageView gifImageView1;
     private GifImageView gifFigmaView_buy;
 
@@ -55,8 +55,21 @@ public class Home extends Fragment {
         }
         catch (IOException ex){
         }
+
+//        checkout = (Button) root.findViewById(R.id.checkout);
+//        checkout.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                fr.replace(getActivity().z);
+//                fr.commit();
+//            }
+//        });
         return root;
     }
+
+
+
 
     public void flipperImages(int image){
         ImageView imageView = new ImageView(getActivity());

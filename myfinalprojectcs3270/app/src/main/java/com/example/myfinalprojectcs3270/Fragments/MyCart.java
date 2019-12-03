@@ -7,14 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfinalprojectcs3270.Adapters.CartAdapter;
-import com.example.myfinalprojectcs3270.ConfirmPaymentActivity;
 import com.example.myfinalprojectcs3270.Object.MyCartItem;
+import com.example.myfinalprojectcs3270.PaypalActivity;
 import com.example.myfinalprojectcs3270.R;
 
 import java.util.ArrayList;
@@ -32,6 +31,7 @@ public class MyCart extends Fragment {
     private CartAdapter cartAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private Button payconfirmed;
+    private Button checkOut;
 
 
     public MyCart() {
@@ -50,15 +50,28 @@ public class MyCart extends Fragment {
 
 
 
+//        //find and link up pay button
+//        payconfirmed = (Button) root.findViewById(R.id.btnPay);
+//        payconfirmed.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), ConfirmPaymentActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
         //find and link up pay button
-        payconfirmed = (Button) root.findViewById(R.id.btnPay);
-        payconfirmed.setOnClickListener(new View.OnClickListener() {
+        checkOut = (Button) root.findViewById(R.id.checkout);
+        checkOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ConfirmPaymentActivity.class);
+                Intent intent = new Intent(getActivity(), PaypalActivity.class);
                 startActivity(intent);
             }
         });
+
+
+
 
         return root;
     }
