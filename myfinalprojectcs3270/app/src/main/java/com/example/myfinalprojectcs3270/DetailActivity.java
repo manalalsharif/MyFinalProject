@@ -1,6 +1,5 @@
 package com.example.myfinalprojectcs3270;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,11 +22,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.myfinalprojectcs3270.DB.MovieDatabase;
 import com.example.myfinalprojectcs3270.Fragments.CartDialog;
 import com.example.myfinalprojectcs3270.Object.MovieItem;
-import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.Utilities.AppExecutors;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
 
 
 public class DetailActivity extends AppCompatActivity {
@@ -98,7 +93,7 @@ public class DetailActivity extends AppCompatActivity {
                 fm.beginTransaction()
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .add(android.R.id.content, dialog)
-                        .addToBackStack(null)
+                      //  .addToBackStack(null)
                         .commit();
             }
         });
