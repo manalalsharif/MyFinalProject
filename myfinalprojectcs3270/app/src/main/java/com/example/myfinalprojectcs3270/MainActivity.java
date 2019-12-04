@@ -9,11 +9,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.myfinalprojectcs3270.Fragments.Account;
-import com.example.myfinalprojectcs3270.Fragments.CartDialog;
 import com.example.myfinalprojectcs3270.Fragments.Home;
 import com.example.myfinalprojectcs3270.Fragments.MyCart;
 import com.example.myfinalprojectcs3270.Fragments.Popular;
-import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setIcon(getDrawable(R.drawable.ic_shopping_cart_white));
-
+        //getSupportActionBar().setIcon(getDrawable(R.drawable.ic_shopping_cart_white));
+       // getActionBar().setTitle("SHOPPING CART APP");
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction()

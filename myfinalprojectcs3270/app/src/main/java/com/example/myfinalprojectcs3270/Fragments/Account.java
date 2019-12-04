@@ -43,6 +43,7 @@ public class Account extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_account, container, false);
 
+        getActivity().setTitle("MY ACCOUNT");
         history = root.findViewById(R.id.history);
 
         history = (Button) root.findViewById(R.id.history);

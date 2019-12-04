@@ -39,15 +39,19 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        getActivity().setTitle("HOUSE MOVIE");
         //Image arry for ImageFlipper
         int images[] = {R.drawable.s6, R.drawable.s2, R.drawable.s3,
                 R.drawable.s5, R.drawable.s1, R.drawable.s7, R.drawable.s8, R.drawable.s9,R.drawable.s10,
                 R.drawable.s11, R.drawable.s12, R.drawable.s13, R.drawable.s14, R.drawable.s15};
+
+
         //showing images in ImageFlipper
         v_flipper = root.findViewById(R.id.v_flipper);
         for(int image: images){
             flipperImages(image);
         }
+
         //Set Animatied picture
         gifImageView1 = (GifImageView) root.findViewById(R.id.gifFigmaView_buy);
         try{

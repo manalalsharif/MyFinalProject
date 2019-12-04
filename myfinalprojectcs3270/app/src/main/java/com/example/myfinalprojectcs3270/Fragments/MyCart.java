@@ -48,20 +48,11 @@ public class MyCart extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_my_cart, container, false);
 
+        getActivity().setTitle("MY CART");
         //set up recycler view for fragment
         cartItemList = new ArrayList<>();
 
 
-
-//        //find and link up pay button
-//        payconfirmed = (Button) root.findViewById(R.id.btnPay);
-//        payconfirmed.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), ConfirmPaymentActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
         //find and link up pay button
         checkOut = (Button) root.findViewById(R.id.checkout);

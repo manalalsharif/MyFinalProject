@@ -60,6 +60,8 @@ public class Popular extends Fragment implements MovieAdapter.RecyclerClickListe
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+
+        getActivity().setTitle("TOP 10 MOVIES");
     }
 
     @Nullable
