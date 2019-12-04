@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,10 +44,17 @@ public class PaypalActivity extends AppCompatActivity {
 
     PayPalPayment thingToBuy;
 
+    public static EditText paypalAmount;
+    public static double total;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paypal);
+
+        paypalAmount = findViewById(R.id.amountt);
+        paypalAmount.setText("$" + String.valueOf(total));
 
         Intent intent = new Intent(this, PayPalService.class);
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
@@ -54,7 +63,7 @@ public class PaypalActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                thingToBuy = new PayPalPayment(new BigDecimal("10"), "USD",
+                thingToBuy = new PayPalPayment(new BigDecimal(total), "USD",
                         "HeadSet", PayPalPayment.PAYMENT_INTENT_SALE);
                 Intent intent = new Intent(PaypalActivity.this,
                         PaymentActivity.class);
@@ -69,7 +78,7 @@ public class PaypalActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar_pay);
         setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Colmplete Payment");
+            getSupportActionBar().setTitle("Complete Payment");
 
     }
 

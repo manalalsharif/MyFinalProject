@@ -16,7 +16,7 @@ import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.R;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import static com.example.myfinalprojectcs3270.Fragments.MyCart.grandTotal;
 import static com.example.myfinalprojectcs3270.Fragments.MyCart.grandTotalplus;
@@ -24,15 +24,12 @@ import static com.example.myfinalprojectcs3270.Fragments.MyCart.temparraylist;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
-    private Context context;
-    private List<MyCartItem> cartItemList;
+    ArrayList<MyCartItem> cartModelArrayList;
+    Context context;
 
-    private RecyclerClickListener recyclerClickListener;
-
-    public CartAdapter(Context context, List<MyCartItem> cartItemList, CartAdapter.RecyclerClickListener recyclerClickListener) {
+    public CartAdapter(ArrayList<MyCartItem> cartModelArrayList, Context context) {
         this.context = context;
-        this.cartItemList = cartItemList;
-        this.recyclerClickListener = recyclerClickListener;
+        this.cartModelArrayList = cartModelArrayList;
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder {
@@ -62,12 +59,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull final CartAdapter.CartViewHolder holder, final int position) {
         //load all movie order details
-        holder.movieTitle.setText(cartItemList.get(position).getTitle());
-        holder.moviePrice.setText(String.valueOf(cartItemList.get(position).getPrice()));
-        holder.movieQuantity.setText(String.valueOf(cartItemList.get(position).getQuantity()));
+        holder.movieTitle.setText(cartModelArrayList.get(position).getTitle());
+        holder.moviePrice.setText(String.valueOf(cartModelArrayList.get(position).getPrice()));
+        holder.movieQuantity.setText(String.valueOf(cartModelArrayList.get(position).getQuantity()));
         //load movie poster
         Picasso.get()
-                .load(cartItemList.get(position).getPoster_path())
+                .load(cartModelArrayList.get(position).getPoster_path())
                 .into(holder.moviePoster);
 
 
@@ -76,24 +73,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             @Override
             public void onClick(View v) {
 
-                if (cartItemList.size() == 1) {
-                    cartItemList.remove(position);
+                if (cartModelArrayList.size() == 1) {
+                    cartModelArrayList.remove(position);
                     notifyItemRemoved(position);
-                    notifyItemRangeChanged(position, cartItemList.size());
+                    notifyItemRangeChanged(position, cartModelArrayList.size());
                     grandTotalplus = 0;
                     grandTotal.setText(String.valueOf(grandTotalplus));
                 }
 
-                if (cartItemList.size() > 0) {
-                    cartItemList.remove(position);
+                if (cartModelArrayList.size() > 0) {
+                    cartModelArrayList.remove(position);
                     notifyItemRemoved(position);
-                    notifyItemRangeChanged(position, cartItemList.size());
-                    grandTotalplus = 0;
+                    notifyItemRangeChanged(position, cartModelArrayList.size());
+                    grandTotalplus = 0.00;
                     for (int i = 0; i < temparraylist.size(); i++) {
                         grandTotalplus = grandTotalplus + temparraylist.get(i).getTotal();
                     }
 
-                    grandTotal.setText(String.valueOf(grandTotalplus));
+                    grandTotal.setText("$"+ String.valueOf(grandTotalplus) + "0");
 
                 } else {
                     Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
@@ -108,32 +105,30 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 grandTotalplus = 0;
                 holder.cartDecrement.setEnabled(true);
 
-                int cartUpdateCounter = (cartItemList.get(position).getQuantity());
-                Log.d("counterthegun", String.valueOf(cartItemList.get(position).getQuantity()));
+                int cartUpdateCounter = (cartModelArrayList.get(position).getQuantity());
 
                 holder.cartIncrement.setEnabled(true);
                 cartUpdateCounter += 1;
 
-                cartItemList.get(position).setQuantity((cartUpdateCounter));
-                double cash = ((cartItemList.get(position).getPrice()) * (cartItemList.get(position).getQuantity()));
+                cartModelArrayList.get(position).setQuantity((cartUpdateCounter));
+                double cash = ((cartModelArrayList.get(position).getPrice()) * (cartModelArrayList.get(position).getQuantity()));
 
-                holder.movieQuantity.setText(String.valueOf(cartItemList.get(position).getQuantity()));
+                holder.movieQuantity.setText(String.valueOf(cartModelArrayList.get(position).getQuantity()));
 
-                cartItemList.get(position).setTotal(cash);
+                cartModelArrayList.get(position).setTotal(cash);
                 holder.moviePrice.setText(String.valueOf(cash));
 
 
                 for (int i = 0; i < temparraylist.size(); i++) {
                     grandTotalplus = grandTotalplus + temparraylist.get(i).getTotal();
                 }
-                Log.d("totalcashthegun", String.valueOf(grandTotalplus));
                 grandTotal.setText(String.valueOf(grandTotalplus));
 
             }
 
         });
 
-        // decrement quantity and update quamtity and total cash
+        // decrement quantity and update quantity and total cash
         holder.cartDecrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,9 +136,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 grandTotalplus = 0;
                 holder.cartIncrement.setEnabled(true);
 
-                int cartUpdateCounter = (cartItemList.get(position).getQuantity());
-                Log.d("counterthegun", String.valueOf(cartItemList.get(position).getQuantity()));
-
+                int cartUpdateCounter = (cartModelArrayList.get(position).getQuantity());
 
                 if (cartUpdateCounter == 1) {
                     holder.cartDecrement.setEnabled(false);
@@ -151,17 +144,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 } else {
                     holder.cartDecrement.setEnabled(true);
                     cartUpdateCounter -= 1;
-                    cartItemList.get(position).setQuantity((cartUpdateCounter));
-                    holder.movieQuantity.setText(String.valueOf(cartItemList.get(position).getQuantity()));
-                    double cash = ((cartItemList.get(position).getPrice()) * (cartItemList.get(position).getQuantity()));
+                    cartModelArrayList.get(position).setQuantity((cartUpdateCounter));
+                    holder.movieQuantity.setText(String.valueOf(cartModelArrayList.get(position).getQuantity()));
+                    double cash = ((cartModelArrayList.get(position).getPrice()) * (cartModelArrayList.get(position).getQuantity()));
 
-                    cartItemList.get(position).setTotal(cash);
-                    holder.movieQuantity.setText(String.valueOf(cash));
+                    cartModelArrayList.get(position).setTotal(cash);
+                    holder.moviePrice.setText(String.valueOf(cash));
                     for (int i = 0; i < temparraylist.size(); i++) {
                         grandTotalplus = grandTotalplus + temparraylist.get(i).getTotal();
                     }
-
-                    Log.d("totalcashthegun", String.valueOf(grandTotalplus));
                     grandTotal.setText(String.valueOf(grandTotalplus));
 
                 }
@@ -172,7 +163,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public int getItemCount() {
-        return cartItemList.size();
+        return cartModelArrayList.size();
     }
 
     public interface RecyclerClickListener {

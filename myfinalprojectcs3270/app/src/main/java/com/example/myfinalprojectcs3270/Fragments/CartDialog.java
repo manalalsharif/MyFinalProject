@@ -22,7 +22,6 @@ import com.example.myfinalprojectcs3270.R;
 
 import java.util.ArrayList;
 
-import static com.example.myfinalprojectcs3270.Fragments.MyCart.temparraylist;
 
 
 /**
@@ -35,7 +34,9 @@ public class CartDialog extends DialogFragment {
     private ImageView cartDecrement, cartIncrement, cartClose;
     private TextView updateQtyDialog, quantity;
     final int[] cartCounter = {0};
-    public static ArrayList<MyCartItem> cartItems = new ArrayList<>();
+
+    public static ArrayList<MyCartItem> cartModels = new ArrayList<MyCartItem>();
+    public static MyCartItem cartModel;
 
 
     public CartDialog() {
@@ -90,17 +91,17 @@ public class CartDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 //create new cart item
-                MyCartItem cartItem = new MyCartItem();
-                cartItem.setQuantity((cartCounter[0]));
-                cartItem.setPoster_path(image);
-                cartItem.setTitle(name);
-                cartItem.setTotal(cartItem.getQuantity() * cartItem.getPrice());
+                cartModel = new MyCartItem();
+                cartModel.setQuantity((cartCounter[0]));
+                cartModel.setPoster_path(image);
+                cartModel.setTitle(name);
+                cartModel.setTotal(cartModel.getQuantity() * cartModel.getPrice());
 
-                //add it to temparraylist in mycart
-                temparraylist.add(cartItem);
+                //adding movie
+                cartModels.add(cartModel);
 
                 //test
-                Log.d("test", "ITEM IN CART: " + cartItem.getQuantity() + " " +  cartItem.getTitle() + " movie(s).");
+                Log.d("test", "ITEM ADDED IN CARTMODELS: " + cartModel.getQuantity() + " " +  cartModel.getTitle() + " movie(s).");
 
                 dismiss();
             }

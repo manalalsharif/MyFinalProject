@@ -36,15 +36,16 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="400dp">
+
         <EditText
             android:id="@+id/amountt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAlignment="center"
             android:fontFamily="@font/simonetta_black"
-            android:textSize="20dp"
-            android:text="$ 9.99"
-            android:textAppearance="?android:attr/textAppearanceSmall">
+            android:text="$ 0.00"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="20dp">
 
         </EditText>
 
