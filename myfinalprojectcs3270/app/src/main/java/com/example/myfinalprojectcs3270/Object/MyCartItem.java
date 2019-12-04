@@ -20,6 +20,7 @@ public class MyCartItem {
     private double price;
     private String poster_path;
     private double total;
+    private boolean purchased;
 
     public MyCartItem(){
         this.price = 9.99;
@@ -32,6 +33,7 @@ public class MyCartItem {
         this.price = 9.99;
         this.date = date;
         this.quantity = 1;
+        this.purchased = false;
     }
 
     @NonNull
@@ -91,5 +93,12 @@ public class MyCartItem {
         this.total = total;
     }
 
+    public boolean isPurchased() {
+        return purchased;
+    }
+
+    public void setPurchased(boolean purchased) {
+        this.purchased = purchased;
+    }
 }
 

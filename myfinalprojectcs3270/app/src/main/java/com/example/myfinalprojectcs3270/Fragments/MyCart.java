@@ -103,6 +103,9 @@ public class MyCart extends Fragment {
             @Override
             public void onClick(View view) {
                 total = grandTotalplus;
+                for (int i = 0; i < temparraylist.size(); i++) {
+                    temparraylist.get(i).setPurchased(true);
+                }
                 Intent intent = new Intent(getActivity(), PaypalActivity.class);
                 startActivity(intent);
             }
