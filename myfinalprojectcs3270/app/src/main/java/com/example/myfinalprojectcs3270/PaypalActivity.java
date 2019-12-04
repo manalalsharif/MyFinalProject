@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.paypal.android.sdk.payments.PayPalAuthorization;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
@@ -19,7 +23,9 @@ import org.json.JSONException;
 
 import java.math.BigDecimal;
 
-public class PaypalActivity extends Activity {
+public class PaypalActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
 
     private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_SANDBOX;
 
@@ -59,6 +65,12 @@ public class PaypalActivity extends Activity {
             }
         });
 
+
+        toolbar = findViewById(R.id.toolbar_pay);
+        setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("Colmplete Payment");
+
     }
 
     public void onFuturePaymentPressed(View pressed) {
@@ -70,6 +82,7 @@ public class PaypalActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_PAYMENT) {
             if (resultCode == Activity.RESULT_OK) {
                 PaymentConfirmation confirm = data
@@ -149,5 +162,16 @@ public class PaypalActivity extends Activity {
         // Stop service when done
         stopService(new Intent(this, PayPalService.class));
         super.onDestroy();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

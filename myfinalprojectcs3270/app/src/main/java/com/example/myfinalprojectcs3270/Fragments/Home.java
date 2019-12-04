@@ -1,5 +1,6 @@
 package com.example.myfinalprojectcs3270.Fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myfinalprojectcs3270.R;
 import com.felipecsl.gifimageview.library.GifImageView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.apache.commons.io.IOUtils;
 
@@ -37,10 +39,11 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        //Image arry for ImageFlipper
         int images[] = {R.drawable.s6, R.drawable.s2, R.drawable.s3,
                 R.drawable.s5, R.drawable.s1, R.drawable.s7, R.drawable.s8, R.drawable.s9,R.drawable.s10,
                 R.drawable.s11, R.drawable.s12, R.drawable.s13, R.drawable.s14, R.drawable.s15};
-        //showing imageViewer pictures
+        //showing images in ImageFlipper
         v_flipper = root.findViewById(R.id.v_flipper);
         for(int image: images){
             flipperImages(image);
@@ -48,7 +51,7 @@ public class Home extends Fragment {
         //Set Animatied picture
         gifImageView1 = (GifImageView) root.findViewById(R.id.gifFigmaView_buy);
         try{
-            InputStream inputStream = getResources().getAssets().open("buy_ticket_gif.gif");
+            InputStream inputStream = getResources().getAssets().open("BuyCornburyTickets.gif");
             byte[] bytes = IOUtils.toByteArray(inputStream);
             gifImageView1.setBytes(bytes);
             gifImageView1.startAnimation();
@@ -56,20 +59,8 @@ public class Home extends Fragment {
         catch (IOException ex){
         }
 
-//        checkout = (Button) root.findViewById(R.id.checkout);
-//        checkout.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                FragmentTransaction fr = getFragmentManager().beginTransaction();
-//                fr.replace(getActivity().z);
-//                fr.commit();
-//            }
-//        });
         return root;
     }
-
-
-
 
     public void flipperImages(int image){
         ImageView imageView = new ImageView(getActivity());
@@ -85,12 +76,18 @@ public class Home extends Fragment {
 
         //Set onclick method when click on image go to popular movies fragment
         gifFigmaView_buy = root.findViewById(R.id.gifFigmaView_buy);
+
         gifFigmaView_buy.setOnClickListener(new View.OnClickListener(){
+            @SuppressLint("ResourceType")
             @Override
             public void onClick(View v){
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container_main, new Popular());
-                fr.commit();
+                FragmentTransaction fm = getFragmentManager().beginTransaction();
+                fm.replace(R.id.fragment_container_main, new Popular());
+                fm.commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+                bottomNavigationView.setSelectedItemId(R.id.menu_products);
+
+
             }
         });
     }

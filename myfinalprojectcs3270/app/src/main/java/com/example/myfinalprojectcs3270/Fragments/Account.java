@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.myfinalprojectcs3270.HistoryActivity;
 import com.example.myfinalprojectcs3270.R;
 import com.felipecsl.gifimageview.library.GifImageView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.apache.commons.io.IOUtils;
 
@@ -72,6 +73,9 @@ public class Account extends Fragment {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container_main, new Popular());
                 fr.commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+                bottomNavigationView.setSelectedItemId(R.id.menu_products);
+
             }
         });
 

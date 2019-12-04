@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.Home">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,18 +16,19 @@
             android:layout_height="300dp">
 
             <ViewFlipper
-                android:id="@+id/v_flipper"
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
-                android:layout_marginLeft="1dp"
                 android:layout_marginTop="60dp"
-                android:layout_marginRight="1dp"></ViewFlipper>
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:id="@+id/v_flipper">
+            </ViewFlipper>
 
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:id="@+id/image_page_dots2"
@@ -40,39 +42,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
             android:layout_centerVertical="false"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center">
 
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp">
-
                 <com.felipecsl.gifimageview.library.GifImageView
                     android:id="@+id/gifFigmaView_buy"
+                    android:scaleType="fitCenter"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter" />
+                    android:layout_height="match_parent"/>
             </FrameLayout>
 
-        </LinearLayout>
 
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp">
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:src="@drawable/home_sport_slide_4_pic">
-                
-            </ImageView>
-        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home_sport_slide_4_pic"
+            android:id="@+id/logo">
+        </ImageView>
+    </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

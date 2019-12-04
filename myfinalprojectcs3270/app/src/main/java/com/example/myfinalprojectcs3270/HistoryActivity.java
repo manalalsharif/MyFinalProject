@@ -30,8 +30,6 @@ public class HistoryActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Your Purchased History");
         }
-
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -37,7 +37,6 @@ public class MyCart extends Fragment {
     public static double grandTotalplus;
     public static ArrayList<MyCartItem> temparraylist;
 
-
     public MyCart() {
         // Required empty public constructor
     }
@@ -73,9 +72,6 @@ public class MyCart extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
 
         return root;
     }
