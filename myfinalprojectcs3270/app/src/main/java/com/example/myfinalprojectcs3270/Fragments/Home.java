@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.myfinalprojectcs3270.R;
 import com.felipecsl.gifimageview.library.GifImageView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.squareup.picasso.Picasso;
 
 import org.apache.commons.io.IOUtils;
 
@@ -41,9 +42,14 @@ public class Home extends Fragment {
 
         getActivity().setTitle("HOUSE MOVIE");
         //Image arry for ImageFlipper
+        //Initiate empty array of strings
         int images[] = {R.drawable.s6, R.drawable.s2, R.drawable.s3,
                 R.drawable.s5, R.drawable.s1, R.drawable.s7, R.drawable.s8, R.drawable.s9,R.drawable.s10,
                 R.drawable.s11, R.drawable.s12, R.drawable.s13, R.drawable.s14, R.drawable.s15};
+
+        //get movieList
+        //for each movie in movie list movie.getPosterPath() add that to array
+
 
 
         //showing images in ImageFlipper

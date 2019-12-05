@@ -33,7 +33,7 @@ public class PaypalActivity extends AppCompatActivity {
 
     // note that these credentials will differ between live & sandbox
     // environments.
-    private static final String CONFIG_CLIENT_ID = "AdilCqx9RdpkUepqoFoFbRVGEUpTKHe5R8CvRYFLswolqR588pk4psROecrYYAA37pC6cIDNQDBFA8g5";
+    private static final String CONFIG_CLIENT_ID = "AV4i_D7GZPlEMwsCNMWjh3oDWankckRALEcy_ZEHVrxSZ8hYquk2umm69OE6H_Rv2fFIyPovdzLMm7xu";
 
     private static final int REQUEST_CODE_PAYMENT = 1;
     private static final int REQUEST_CODE_FUTURE_PAYMENT = 2;
@@ -64,7 +64,7 @@ public class PaypalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 thingToBuy = new PayPalPayment(new BigDecimal(total), "USD",
-                        "HeadSet", PayPalPayment.PAYMENT_INTENT_SALE);
+                        "Movie Tickets", PayPalPayment.PAYMENT_INTENT_SALE);  //add number inside of movie tickets?
                 Intent intent = new Intent(PaypalActivity.this,
                         PaymentActivity.class);
 
