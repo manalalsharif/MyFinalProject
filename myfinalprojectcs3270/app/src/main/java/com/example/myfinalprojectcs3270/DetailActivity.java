@@ -118,7 +118,7 @@ public class DetailActivity extends AppCompatActivity {
         movieRating.setText(rating);
         movieRelease.setText(release);
 
-        movieDatabase = MovieDatabase.getInstance(getApplicationContext());
+        movieDatabase = MovieDatabase.getInstance( getApplicationContext());
         detailParent = findViewById(R.id.detail_parent);
     }
 

@@ -50,6 +50,7 @@ public class Home extends Fragment {
         v_flipper = root.findViewById(R.id.v_flipper);
         for(int image: images){
             flipperImages(image);
+
         }
 
         //Set Animatied picture
@@ -59,6 +60,8 @@ public class Home extends Fragment {
             byte[] bytes = IOUtils.toByteArray(inputStream);
             gifImageView1.setBytes(bytes);
             gifImageView1.startAnimation();
+
+
         }
         catch (IOException ex){
         }
@@ -90,7 +93,6 @@ public class Home extends Fragment {
                 fm.commit();
                 BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
                 bottomNavigationView.setSelectedItemId(R.id.menu_products);
-
 
             }
         });

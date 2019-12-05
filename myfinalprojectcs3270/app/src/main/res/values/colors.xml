@@ -18,6 +18,9 @@
     <color name="colorButton">#F2F2F2</color>
     <color name="colorButtonFont">#83031A</color>
 
+    <color name="colorFontAbout">#38024D</color>
+
+
     <color name="textColor_movie_favorite_white">#F2F2F2</color>
     <color name="textColor_movie_favorite_primry">#83031A</color>
 
