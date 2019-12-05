@@ -67,7 +67,7 @@ public class Account extends Fragment {
         }
 
         //Set onclick method when click on image go to popular movies fragment
-        reOrder = root.findViewById(R.id.reOrder);
+        reOrder = root.findViewById(R.id.reorder);
         reOrder.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
