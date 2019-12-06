@@ -84,10 +84,12 @@ public class MyCart extends Fragment {
         temparraylist.addAll(cartModels);
         historyArrayList.addAll(temparraylist);
         cartModels.clear();
+
         // this code is for get total cash
         for (int i = 0; i < temparraylist.size(); i++) {
             grandTotalplus = grandTotalplus + temparraylist.get(i).getTotal();
         }
+
         double finalTotal = Math.round(grandTotalplus * 100.0) / 100.0;
         grandTotal.setText("$" + String.valueOf(finalTotal));
         cartRecycler = root.findViewById(R.id.cart_recycler);
@@ -95,7 +97,6 @@ public class MyCart extends Fragment {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         cartRecycler.setLayoutManager(mLayoutManager);
         cartRecycler.setAdapter(cartAdapter);
-
 
         //pay button
         checkOut.setOnClickListener(new View.OnClickListener() {

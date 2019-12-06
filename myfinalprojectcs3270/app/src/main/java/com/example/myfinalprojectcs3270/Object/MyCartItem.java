@@ -6,6 +6,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "mycart")
@@ -24,6 +27,9 @@ public class MyCartItem {
 
     public MyCartItem(){
         this.price = 9.99;
+        String pattern = "MM-dd-yyyy";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        this.date = simpleDateFormat.format(new Date());
     };
 
     public MyCartItem(int myCartId, String title) {

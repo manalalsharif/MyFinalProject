@@ -49,7 +49,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(@NonNull HistoryAdapter.HistoryViewHolder holder, int position) {
-        holder.purchaseDate.setText("12/5/19");
+        holder.purchaseDate.setText(historyList.get(position).getDate());
         holder.purchaseTitle.setText(historyList.get(position).getTitle());
         holder.purchaseTotal.setText(String.valueOf(historyList.get(position).getTotal()));
     }
