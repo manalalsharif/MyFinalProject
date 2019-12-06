@@ -88,7 +88,8 @@ public class MyCart extends Fragment {
         for (int i = 0; i < temparraylist.size(); i++) {
             grandTotalplus = grandTotalplus + temparraylist.get(i).getTotal();
         }
-        grandTotal.setText("$" + String.valueOf(grandTotalplus));
+        double finalTotal = Math.round(grandTotalplus * 100.0) / 100.0;
+        grandTotal.setText("$" + String.valueOf(finalTotal));
         cartRecycler = root.findViewById(R.id.cart_recycler);
         cartAdapter = new CartAdapter(temparraylist, getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
