@@ -17,7 +17,7 @@
             android:id="@+id/txtDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="50dp"
+            android:paddingLeft="20dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header" />
 
@@ -25,7 +25,7 @@
             android:id="@+id/txtTickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="50dp"
+            android:paddingLeft="20dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header" />
 
@@ -33,8 +33,8 @@
             android:id="@+id/txtTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header" />
 
