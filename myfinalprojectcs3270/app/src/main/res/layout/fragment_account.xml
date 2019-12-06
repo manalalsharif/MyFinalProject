@@ -66,13 +66,15 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:background="@color/colorButton"
             android:fontFamily="@font/simonetta_black"
             android:text="History"
             android:textAlignment="center"
             android:textColor="@color/colorButtonFont"
-            android:textSize="15pt">
+            android:drawableTop="@drawable/ic_history_black_24dp"
+            android:textSize="15pt"
+            android:layout_weight="1">
 
         </Button>
     </LinearLayout>
