@@ -16,6 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfinalprojectcs3270.Adapters.CartAdapter;
+import com.example.myfinalprojectcs3270.Adapters.HistoryAdapter;
+import com.example.myfinalprojectcs3270.DB.MovieDatabase;
+import com.example.myfinalprojectcs3270.HistoryActivity;
 import com.example.myfinalprojectcs3270.Object.MyCartItem;
 import com.example.myfinalprojectcs3270.PaypalActivity;
 import com.example.myfinalprojectcs3270.R;
@@ -24,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.myfinalprojectcs3270.Fragments.CartDialog.cartModels;
+import static com.example.myfinalprojectcs3270.HistoryActivity.historyArrayList;
 import static com.example.myfinalprojectcs3270.PaypalActivity.total;
 
 /**
@@ -64,28 +68,22 @@ public class MyCart extends Fragment {
         grandTotal = root.findViewById(R.id.totalPrice);
 
         cartModels.addAll(temparraylist);
-
-        Log.d("sizecart_1", String.valueOf(temparraylist.size()));
-        Log.d("sizecart_2", String.valueOf(cartModels.size()));
-
-
         // from these lines of code we remove the duplicacy of cart and set last added quantity in cart
         // for replace same item
-//        for (int i = 0; i < cartModels.size(); i++) {
-//            for (int j = i + 1; j < cartModels.size(); j++) {
-//                if (cartModels.get(i).getPoster_path().equals(cartModels.get(j).getPoster_path())) {
-//                    cartModels.get(i).setQuantity(cartModels.get(j).getQuantity());
-//                    cartModels.get(i).setTotal(cartModels.get(j).getTotal());
-//                    cartModels.remove(j);
-//                    j--;
-//                }
-//            }
-//
-//        }
+        for (int i = 0; i < cartModels.size(); i++) {
+            for (int j = i + 1; j < cartModels.size(); j++) {
+                if (cartModels.get(i).getPoster_path().equals(cartModels.get(j).getPoster_path())) {
+                    cartModels.get(i).setQuantity(cartModels.get(j).getQuantity());
+                    cartModels.get(i).setTotal(cartModels.get(j).getTotal());
+                    cartModels.remove(j);
+                    j--;
+                }
+            }
+
+        }
         temparraylist.addAll(cartModels);
+        historyArrayList.addAll(temparraylist);
         cartModels.clear();
-        Log.d("sizecart_11", String.valueOf(temparraylist.size()));
-        Log.d("sizecart_22", String.valueOf(cartModels.size()));
         // this code is for get total cash
         for (int i = 0; i < temparraylist.size(); i++) {
             grandTotalplus = grandTotalplus + temparraylist.get(i).getTotal();
@@ -103,13 +101,11 @@ public class MyCart extends Fragment {
             @Override
             public void onClick(View view) {
                 total = grandTotalplus;
-                for (int i = 0; i < temparraylist.size(); i++) {
-                    temparraylist.get(i).setPurchased(true);
-                }
                 Intent intent = new Intent(getActivity(), PaypalActivity.class);
                 startActivity(intent);
             }
         });
+
 
         return root;
     }

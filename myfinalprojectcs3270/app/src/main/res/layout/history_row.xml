@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:contentPadding="8dp"
     android:layout_margin="4dp"
-    app:cardElevation="1dp">
+    app:cardElevation="1dp"
+    app:contentPadding="8dp">
 
 
     <LinearLayout
@@ -15,25 +15,26 @@
 
         <TextView
             android:id="@+id/txtDate"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:paddingLeft="50dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header" />
 
         <TextView
             android:id="@+id/txtTickets"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:paddingLeft="50dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header" />
 
         <TextView
             android:id="@+id/txtTotal"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header" />
 
